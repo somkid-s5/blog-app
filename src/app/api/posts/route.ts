@@ -40,7 +40,7 @@ export const GET = async (req: NextRequest) => {
   }
 };
 
-export default GET;
+
 
 // CREATE A POST
 export const POST = async (req: NextRequest) => {

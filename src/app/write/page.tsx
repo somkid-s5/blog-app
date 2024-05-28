@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSession } from "next-auth/react";
 import {
   getStorage,
@@ -10,12 +10,13 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill-ayon";
 
 import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill-ayon"), { ssr: false });
 
 const toolbarOptions = [
   [{ size: ["small", false, "large", "huge"] }, { font: [] }], // custom dropdown
@@ -42,6 +43,7 @@ interface FormData {
 
 const WritePage = () => {
   const { status, data: session } = useSession();
+  
   const router = useRouter();
 
   const [formData, setFormData] = useState<FormData>({
@@ -50,6 +52,7 @@ const WritePage = () => {
     category: "",
     content: "",
   });
+
   if (status === "unauthenticated") {
     router.push("/");
   }
@@ -178,7 +181,9 @@ const WritePage = () => {
                 setFormData({ ...formData, category: e.target.value })
               }
             >
-              <option value="" selected disabled hidden>Choose here</option>
+              <option value="" selected disabled hidden>
+                Choose here
+              </option>
               <option value="tech">Technology</option>
               <option value="health">Health & Wellness</option>
               <option value="travel">Travel</option>
