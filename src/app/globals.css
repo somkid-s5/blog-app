@@ -1,33 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mitr:wght@200;300;400;500;600;700&display=swap");
+@import "@flaticon/flaticon-uicons/css/all/all";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  body {
+    @apply font-kanit  font-light;
+  }
+  i {
+    @apply leading-[0];
+  }
+  section {
+    @apply py-4 px-[5vw] md:px-[7vw] lg:px-[10vw];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .h-cover {
+    @apply min-h-[calc(100vh-80px)];
+  }
+
+  .btn-dark {
+    @apply whitespace-nowrap bg-black hover:bg-gray-500 text-white text-lg  py-1 px-4 border-2 border-white  rounded-full;
+  }
+  .btn-light {
+    @apply btn-dark bg-white text-black border-black border hover:bg-gray-500;
+  }
+  .btn-text {
+    @apply text-xs  w-max rounded-full   px-4 py-2 font-medium text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 hover:shadow-md;
+  }
+  .btn-tag {
+    @apply text-xs relative w-max  rounded-full bg-gray-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-500 hover:text-white;
+  }
+  .light {
+    @apply bg-[#f7f7f7] text-[#222222];
+  }
+  .dark {
+    @apply bg-[#222222] text-[#f7f7f7];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dark {
+  --bg: #222222;
+  --softBg: #040404;
+  --textColor: #eeeeee;
+  --softTextColor: #f7f7f7;
+  --btn-dark: #eeeeee;
+  --btn-light: #222222;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.light {
+  --bg: #f7f7f7;
+  --softBg: #eeeeee;
+  --textColor: #222222;
+  --softTextColor: #929aab;
+  --btn-dark: #222222;
+  --btn-light: #f7f7f7;
+}
+
+.ql-toolbar {
+  border-radius: 5px;
+  position: sticky;
+  top: 80px;
+  background-color: var(--bg) !important;
+  z-index: 10;
+}
+
+/* .ql-formats::hover {
+  color: aqua !important;
+}
+.ql-editor {
+  color: var(--textColor) !important;
+}
+
+.ql-editor.ql-blank::before {
+  color: var(--softTextColor) !important;
+} */
+.ql-stroke {
+  stroke: var(--textColor) !important;
+}
+.ql-fill {
+  fill: var(--textColor) !important;
+}
+
+.ql-formats button:hover {
+  .ql-fill {
+    fill: skyblue !important;
   }
+  .ql-stroke {
+    stroke: skyblue !important;
+  }
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  border-bottom: #626262 !important;
+}
+.ql-snow .ql-picker.ql-size {
+  width: 70px !important;
 }
