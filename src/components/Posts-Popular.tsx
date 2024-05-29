@@ -14,7 +14,7 @@ const PostsPopList: React.FC<TypeProps> = ({ item, key }) => {
       key={key}
     >
       <article className="flex flex-col max-w-xl  gap-3 items-start ">
-        <Link href={item.cat.slug} className="btn-tag">
+        <Link href={`/tag/${item.cat.slug}`} className="btn-tag">
           {item.cat.title}
         </Link>
 

@@ -9,7 +9,6 @@ interface Category_Type {
 }
 
 const getData = async (): Promise<Category_Type[]> => {
-  console.log(process.env.NEXT_PUBLIC_URL + "api/categories");
   try {
     const res = await axios.get<Category_Type[]>(
       process.env.NEXT_PUBLIC_URL + "api/categories",

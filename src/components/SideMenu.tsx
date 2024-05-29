@@ -7,7 +7,7 @@ interface resType {
 }
 
 const getData = async (): Promise<resType> => {
-  const res = await fetch(`http://localhost:3000/api/posts/popular`, {
+  const res = await fetch("http://localhost:3000/api/posts/popular", {
     cache: "no-store",
   });
 

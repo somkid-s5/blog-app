@@ -22,7 +22,6 @@ const PostCard: React.FC<PostCardProps> = ({ item, key, style }) => {
             alt="Image Blog Title"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-           
             className="object-cover  h-full object-center rounded-lg "
           />
         </div>
@@ -45,28 +44,41 @@ const PostCard: React.FC<PostCardProps> = ({ item, key, style }) => {
                 {item.title}
               </Link>
             </h3>
-            <p className="hidden md:line-clamp-3 mt-5  text-sm leading-6 text-gray-600 dark:text-gray-200 ">
-              {item.content}
-            </p>
+            <div
+              className="hidden md:line-clamp-3 mt-5  text-sm leading-6 text-gray-600 dark:text-gray-200 "
+              dangerouslySetInnerHTML={{
+                __html: item.content.replace(/<img[^>]*>/g, ""),
+              }}
+            ></div>
           </div>
         </article>
       </div>
-      <div className="relative mt-5 flex items-center gap-x-4  h-max ">
-        <Image
-          src={item.user.image}
-          width={50}
-          height={50}
-          alt=""
-          className="h-8 w-8 rounded-full bg-gray-50"
-        />
-        <div className="text-sm ">
-          <p className="font-semibold text-gray-900 dark:text-white">
-            <Link href="/">
-              <span className="absolute inset-0" />
-              {item.user.name}
-            </Link>
+      <div className="relative mt-5 flex justify-between items-center gap-x-4  h-max ">
+        <div className="flex">
+          <div className="flex justify-center items-center px-2">
+            <Image
+              src={item.user.image}
+              width={50}
+              height={50}
+              alt=""
+              className="h-8 w-8 rounded-full bg-gray-50"
+            />
+          </div>
+          <div className="text-sm ">
+            <p className="font-semibold text-gray-900 dark:text-white">
+              <Link href="/">
+                <span className="absolute inset-0" />
+                {item.user.name}
+              </Link>
+            </p>
+            <p className="text-gray-600 dark:text-gray-200">Co-Founder / CTO</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-1  ">
+          <i className="fi fi-br-eye text-center text-gray-500 dark:text-gray-300"></i>
+          <p className="text-center text-gray-500 dark:text-gray-300">
+            {item.views}
           </p>
-          <p className="text-gray-600 dark:text-gray-200">Co-Founder / CTO</p>
         </div>
       </div>
     </div>

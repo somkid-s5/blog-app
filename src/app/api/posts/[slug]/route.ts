@@ -13,7 +13,6 @@ export const GET = async (
   { params }: Params
 ): Promise<NextResponse> => {
   const slug = params.slug;
-  console.log("Slug:", slug); // Debugging: log slug
 
   try {
     const post = await prisma.post.update({

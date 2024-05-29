@@ -34,7 +34,7 @@ const SinglePage: React.FC<Params> = async ({ params }) => {
         <div className="grid gap-3 justify-start ">
           <h1 className="text-5xl font-bold ">{data.title}</h1>
           <Link
-            href={`/posts/${data.cat.slug}`}
+            href={`/tag/${data.cat.slug}`}
             className="btn-tag"
           >
             {data.cat.title}

@@ -8,7 +8,7 @@ interface HomeProps {
   };
 }
 
-const Home: React.FC<HomeProps> = async ({ searchParams }) => {
+const Home: React.FC<HomeProps> =  ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
   return (
     <main className=" container mx-auto max-w-7xl  ">

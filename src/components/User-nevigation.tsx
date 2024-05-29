@@ -31,7 +31,7 @@ const UserNavigationPanel = () => {
         <button
           className="text-left hover:text-black hover:bg-gray-100 w-full px-8 py-4"
           type="button"
-          onClick={() => signOut({ callbackUrl: "/" })}
+          onClick={() => signOut()}
         >
           <h1 className="font-bold text-xl mg-1">Sign Out</h1>
         </button>
