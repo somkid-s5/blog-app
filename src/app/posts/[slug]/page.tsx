@@ -7,7 +7,7 @@ import React from "react";
 
 const getData = async (slug: string) => {
   try {
-    const res = await axios.get(`http://localhost:3000/api/posts/${slug}`, {
+    const res = await axios.get(process.env.NEXT_PUBLIC_URL + `/api/posts/${slug}`, {
       headers: {
         "Cache-Control": "no-store",
       },
