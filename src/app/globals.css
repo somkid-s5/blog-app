@@ -66,16 +66,6 @@
   z-index: 10;
 }
 
-/* .ql-formats::hover {
-  color: aqua !important;
-}
-.ql-editor {
-  color: var(--textColor) !important;
-}
-
-.ql-editor.ql-blank::before {
-  color: var(--softTextColor) !important;
-} */
 .ql-stroke {
   stroke: var(--textColor) !important;
 }
