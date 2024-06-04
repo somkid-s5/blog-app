@@ -40,7 +40,10 @@ const AuthLinks: FC = () => {
         </>
       ) : (
         <div className="flex bg-gray gap-4">
-          <Link href="/write" className=" hidden md:flex gap-1 p-2 items-center">
+          <Link
+            href="/write"
+            className=" hidden md:flex gap-1 p-2 items-center"
+          >
             <i className="fi fi-rr-file-edit leading-[0]"></i>
             <p>Write</p>
           </Link>
@@ -76,29 +79,19 @@ const AuthLinks: FC = () => {
                 Home
               </Link>
             </li>
-            <li className="w-full p-4 rounded-xl bg-gray-200/50 dark:bg-gray-200/20  shadow-md">
-              <Link href="/" className="block w-full  text-xl ">
-                Contact
-              </Link>
-            </li>
-            <li className="w-full p-4 rounded-xl bg-gray-200/50 dark:bg-gray-200/20  shadow-md">
-              <Link href="/" className="block w-full  text-xl ">
-                About
-              </Link>
-            </li>
           </ul>
           {status === "unauthenticated" ? (
             <div className="flex mt-5 gap-5">
-              <Link href="/signin" className="btn-dark">
+              <Link href="userAuth/sign-in" className="btn-dark">
                 Sign In
               </Link>
-              <Link href="/signup" className="btn-light">
+              <Link href="userAuth/sign-up" className="btn-light">
                 Sign Up
               </Link>
             </div>
           ) : (
             <div className="flex mt-5 gap-5">
-              <Link href="/editor" className="flex gap-2 p-2 items-center">
+              <Link href="/write" className="flex gap-2 p-2 items-center">
                 <i className="fi fi-rr-file-edit leading-[0]"></i>
                 <p>Write</p>
               </Link>
