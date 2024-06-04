@@ -30,6 +30,7 @@ const nextConfig = {
         port: "",
       },
     ],
+    unoptimized: true,
   },
   output: "standalone",
 };

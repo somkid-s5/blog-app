@@ -46,6 +46,8 @@ const SinglePage: React.FC<Params> = async ({ params }) => {
               height={64}
               alt=""
               className="h-10 w-10 rounded-full bg-gray-50"
+              priority={true}
+              quality={10}
             />
             <div className="text-sm ">
               <p className="font-semibold text-gray-900 dark:text-gray-200">
@@ -65,6 +67,8 @@ const SinglePage: React.FC<Params> = async ({ params }) => {
             alt=""
             fill
             className="object-cover object-center rounded-lg  "
+            placeholder="blur"
+            priority={true}
           />
         </div>
         <div

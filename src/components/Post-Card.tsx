@@ -23,6 +23,10 @@ const PostCard: React.FC<PostCardProps> = ({ item, key, style }) => {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover  h-full object-center rounded-lg "
+            loading="lazy"
+            placeholder="blur"
+            quality={20}
+
           />
         </div>
         <article className="flex flex-[2] max-w-xl flex-col items-start justify-between">
