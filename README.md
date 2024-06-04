@@ -3,6 +3,16 @@
 
 My first project to learn NextJS and Typescript
 
+## 🛠️ Tech Stack
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Prisma
+* MongoDB
+* Filebase
+* Firebase
+* ReactQuill
 
 ## 🐥Features
 
@@ -15,16 +25,4 @@ My first project to learn NextJS and Typescript
 👉 Authentication & Authorization System
 
 👉 Create Post Page and upload Images
-
-
-## 🛠️ Tech Stack
-
-* Next.js
-* TypeScript
-* Tailwind CSS
-* Prisma
-* MongoDB
-* Filebase
-* Firebase
-* ReactQuill
 
